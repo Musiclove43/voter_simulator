@@ -10,8 +10,8 @@ class World
 
   def initialize
     #People type aggregate
-    @voter_list = create_all_voters(12,1,3,5,6)
-    @politician_list = create_all_politicians(10,12)
+    @voter_list = []#create_all_voters(12,1,3,5,6)
+    @politician_list = []#create_all_politicians(10,12)
     @all_people = [@voter_list, @politician_list].flatten!
 
     #candidates by category

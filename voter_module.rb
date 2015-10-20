@@ -34,6 +34,7 @@ def menu_option(world)
   when "u"
     display_update(world)
   when "v"
+    simulation_possible(world)
     voter_simulator(world)
   else
     no_choice(world)
@@ -90,6 +91,16 @@ def display_update(world)
   intro(world)
 end
 #----------------------------------------------Voter_Simulator----------------------------------------------
+def simulation_possible(world)
+  p world.voter_list.empty?
+  if world.voter_list.empty? || world.politician_list.empty?
+    puts "Simulation not possible, add Voters or Politicians"
+    intro(world)
+  else
+    voter_simulator(world)
+  end
+end
+
 def voter_simulator(world)
   simulate = Campaign.new(world)
   simulate.start_campaign
@@ -99,6 +110,7 @@ def no_choice(world)
   puts "Oops you didnt enter a valid choice. Start over."
   intro(world)
 end
+
 
 include MainMenu
 w = World.new

@@ -9,6 +9,8 @@ class Campaign #< World
     @politician_list = world.politician_list
   end
 
+
+
   def start_campaign
     puts ""
     puts "Running election simulation. Please wait......"
