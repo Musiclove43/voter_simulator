@@ -63,6 +63,7 @@ class Campaign #< World
 
   def pick_btw_republicans
     rep_vote = @republicans_on_ballot.sample
+    p rep_vote
     cast_vote(rep_vote)
   end
 

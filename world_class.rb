@@ -70,6 +70,7 @@ class World
     h = Hash.new
     h[:name] = x.name
     h[:party] = x.party
+    h[:vote_count] = 1
     @politician_list << h
     @all_people << h
   end
@@ -131,14 +132,14 @@ class World
 private
   def create_all_politicians(reps, dems)
     names = (reps+dems).times.map {Faker::Name.name}
-    keys = [:name, :party]
+    keys = [:name, :party, :vote_count]
     all = []
     all << Array.new(reps, "republican")
     all << Array.new(dems, "democrat")
     all.flatten!
     values = []
     names.each_with_index.map do |name, index|
-      values << [name, all[index]]
+      values << [name, all[index], 1]
     end
     values.map{|r| Hash[r.zip(keys)].invert }
   end
