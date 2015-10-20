@@ -4,10 +4,6 @@ require_relative 'world_class'
 require_relative 'campaign_class'
 include ClassPersonFactory
 
-
-# require_relative "world_class"
-
-
 module MainMenu
   def intro(world)
     puts "                             Welcome to Voter Simulator                   "
@@ -92,7 +88,6 @@ def display_update(world)
 end
 #----------------------------------------------Voter_Simulator----------------------------------------------
 def simulation_possible(world)
-  p world.voter_list.empty?
   if world.voter_list.empty? || world.politician_list.empty?
     puts "Simulation not possible, add Voters or Politicians"
     intro(world)

@@ -1,7 +1,6 @@
 require 'faker'
-#require_relative 'world_class'
 
-class Campaign #< World
+class Campaign
   attr_accessor :voter_list, :politician_list
 
   def initialize(world)
@@ -65,7 +64,6 @@ class Campaign #< World
 
   def pick_btw_republicans
     rep_vote = @republicans_on_ballot.sample
-    p rep_vote
     cast_vote(rep_vote)
   end
 
@@ -91,7 +89,7 @@ class Campaign #< World
   def run_again
     puts "Would you like to run the simulation again? (y/n)"
     print ""
-    puts again = gets.chomp
+    again = gets.chomp
     case again
     when "y"
       start_campaign

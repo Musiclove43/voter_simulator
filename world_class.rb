@@ -1,8 +1,3 @@
-
-# require_relative 'voter_module'
-# require_relative 'c_person'
-# include MainMenu
-# include ClassPersonFactory
 require 'faker'
 
 class World
@@ -10,8 +5,8 @@ class World
 
   def initialize
     #People type aggregate
-    @voter_list = []#create_all_voters(12,1,3,5,6)
-    @politician_list = []#create_all_politicians(10,12)
+    @voter_list = create_all_voters(5,5,5,5,5)
+    @politician_list = create_all_politicians(3,3)
     @all_people = [@voter_list, @politician_list].flatten!
 
     #candidates by category
